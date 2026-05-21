@@ -5,12 +5,16 @@
 (async function() {
   let data;
   try {
-    const res = await fetch('/api/content', { cache: 'no-store' });
+    // Try API first (local server), then static data.json (GitHub Pages)
+    let res = await fetch('/api/content', { cache: 'no-store' });
+    if (!res.ok) throw new Error('API not available');
     data = await res.json();
   } catch (e) {
-    // Fallback: load static data.json (for GitHub Pages / static hosting)
     try {
-      const res = await fetch('/lucas-studio/data.json');
+      // Determine base path for static hosting
+      const basePath = window.location.pathname.startsWith('/lucas-studio') ? '/lucas-studio' : '';
+      const res = await fetch(basePath + '/data.json');
+      if (!res.ok) throw new Error('Static data not available');
       data = await res.json();
     } catch (e2) {
       console.error('Failed to load content:', e2);
