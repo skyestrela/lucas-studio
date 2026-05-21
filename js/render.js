@@ -8,8 +8,14 @@
     const res = await fetch('/api/content', { cache: 'no-store' });
     data = await res.json();
   } catch (e) {
-    console.error('Failed to load content:', e);
-    return;
+    // Fallback: load static data.json (for GitHub Pages / static hosting)
+    try {
+      const res = await fetch('/lucas-studio/data.json');
+      data = await res.json();
+    } catch (e2) {
+      console.error('Failed to load content:', e2);
+      return;
+    }
   }
 
   // ── Site meta ──
