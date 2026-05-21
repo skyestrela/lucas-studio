@@ -1,7 +1,7 @@
 {
   "site": {
-    "title": "Lucas Studios — Creative Digital Works",
-    "description": "Lucas Studios — building browser-first tools that work. Piano tuners, income platforms, plant care, AI ops, dashboards, briefings.",
+    "title": "Lucas Studios \u2014 Creative Digital Works",
+    "description": "Lucas Studios \u2014 building browser-first tools that work. Piano tuners, income platforms, plant care, AI ops, dashboards, briefings.",
     "footerTagline": "Built with obsession and too much coffee.",
     "adminPasswordHash": "$2b$10$YZC/jcDBya0X7Q878E3hpeL.OpZKKnhcFp6BBypmeyAKkgzhl5XgC"
   },
@@ -33,7 +33,7 @@
       {
         "num": "03",
         "title": "Creative Engineering",
-        "desc": "Canvas animations, Web Audio DSP, AI pipelines, offline queues — building what others say can't be done in a browser."
+        "desc": "Canvas animations, Web Audio DSP, AI pipelines, offline queues \u2014 building what others say can't be done in a browser."
       },
       {
         "num": "04",
@@ -69,12 +69,12 @@
     "subtitle": "Got an idea? Let's make it real.",
     "links": [
       {
-        "icon": "⌘",
-        "label": "GitHub",
-        "url": "https://github.com/skyestrela"
+        "icon": "\u2318",
+        "label": "Email",
+        "url": "mailto:luc.cloud8@gmail.com"
       },
       {
-        "icon": "✉",
+        "icon": "\u2709",
         "label": "Email",
         "url": "mailto:lucas@lucasstudio.dev"
       }
@@ -92,30 +92,30 @@
       ],
       "name": "KeyTune",
       "role": "Piano Tuner Pro",
-      "description": "Professional-grade piano tuning in your browser. YIN autocorrelation pitch detection. 88-key canvas keyboard. Stretch tuning with Railsback curves. Calibration test A0–C8 with invoice export. Replaces £3,000 hardware ETDs with a free PWA.",
+      "description": "Professional-grade piano tuning in your browser. YIN autocorrelation pitch detection. 88-key canvas keyboard. Stretch tuning with Railsback curves. Calibration test A0\u2013C8 with invoice export. Replaces \u00a33,000 hardware ETDs with a free PWA.",
       "features": [
         {
-          "icon": "♪",
+          "icon": "\u266a",
           "text": "YIN Pitch Detection"
         },
         {
-          "icon": "⟡",
+          "icon": "\u27e1",
           "text": "Railsback Stretch Tuning"
         },
         {
-          "icon": "🔧",
+          "icon": "\ud83d\udd27",
           "text": "88-Key Calibration"
         },
         {
-          "icon": "📄",
+          "icon": "\ud83d\udcc4",
           "text": "PDF Invoice Export"
         },
         {
-          "icon": "◎",
+          "icon": "\u25ce",
           "text": "Strobe Harmonics"
         },
         {
-          "icon": "📵",
+          "icon": "\ud83d\udcf5",
           "text": "Offline PWA"
         }
       ],
@@ -132,12 +132,12 @@
       "links": [
         {
           "type": "github",
-          "label": "GitHub ↗",
+          "label": "GitHub \u2197",
           "url": "https://github.com/skyestrela/keytune"
         },
         {
           "type": "tag",
-          "label": "PWA · Free + Plus + Pro"
+          "label": "PWA \u00b7 Free + Plus + Pro"
         }
       ],
       "canvasType": "keytune",
@@ -154,30 +154,30 @@
       ],
       "name": "Money Stack",
       "role": "AI Income Discovery Platform",
-      "description": "151 income methods across 16 categories — ranked by real data, not guru hype. Scored income calculator. AI-powered playbook generation. Self-evolving system that discovers trending methods, adjusts scores, and generates content automatically.",
+      "description": "151 income methods across 16 categories \u2014 ranked by real data, not guru hype. Scored income calculator. AI-powered playbook generation. Self-evolving system that discovers trending methods, adjusts scores, and generates content automatically.",
       "features": [
         {
-          "icon": "📊",
+          "icon": "\ud83d\udcca",
           "text": "151 Scored Methods"
         },
         {
-          "icon": "🧮",
+          "icon": "\ud83e\uddee",
           "text": "Income Calculator"
         },
         {
-          "icon": "🤖",
+          "icon": "\ud83e\udd16",
           "text": "Self-Evolving AI"
         },
         {
-          "icon": "📚",
+          "icon": "\ud83d\udcda",
           "text": "Auto Playbooks"
         },
         {
-          "icon": "📈",
+          "icon": "\ud83d\udcc8",
           "text": "Trend Detection"
         },
         {
-          "icon": "🔒",
+          "icon": "\ud83d\udd12",
           "text": "Auth-Gated Content"
         }
       ],
@@ -192,17 +192,17 @@
       "links": [
         {
           "type": "github",
-          "label": "GitHub ↗",
+          "label": "GitHub \u2197",
           "url": "https://github.com/skyestrela/money-stack"
         },
         {
           "type": "demo",
-          "label": "Live Demo ↗",
+          "label": "Live Demo \u2197",
           "url": "http://localhost:3005"
         },
         {
           "type": "tag",
-          "label": "SaaS · Free + Pro"
+          "label": "SaaS \u00b7 Free + Pro"
         }
       ],
       "canvasType": "moneystack",
@@ -219,30 +219,30 @@
       ],
       "name": "LeafyLife Pro",
       "role": "Plant Care & Community",
-      "description": "Full-featured plant care PWA with AI identification, disease diagnosis, care logging, sighting tracker, XP gamification, community, marketplace, and offline support. Blooming coverage tracker, referral system, newsletter engine — 30+ pages, 20+ Edge Functions.",
+      "description": "Full-featured plant care PWA with AI identification, disease diagnosis, care logging, sighting tracker, XP gamification, community, marketplace, and offline support. Blooming coverage tracker, referral system, newsletter engine \u2014 30+ pages, 20+ Edge Functions.",
       "features": [
         {
-          "icon": "🌿",
+          "icon": "\ud83c\udf3f",
           "text": "AI Plant ID"
         },
         {
-          "icon": "🩺",
+          "icon": "\ud83e\ude7a",
           "text": "Disease Diagnosis"
         },
         {
-          "icon": "🏆",
+          "icon": "\ud83c\udfc6",
           "text": "XP & Badges"
         },
         {
-          "icon": "🌸",
+          "icon": "\ud83c\udf38",
           "text": "Bloom Coverage"
         },
         {
-          "icon": "📡",
+          "icon": "\ud83d\udce1",
           "text": "Offline Queue"
         },
         {
-          "icon": "🏪",
+          "icon": "\ud83c\udfea",
           "text": "Marketplace"
         }
       ],
@@ -258,17 +258,17 @@
       "links": [
         {
           "type": "github",
-          "label": "GitHub ↗",
+          "label": "GitHub \u2197",
           "url": "https://github.com/skyestrela/leafy-life-pro-fe3690ad"
         },
         {
           "type": "demo",
-          "label": "Live Site ↗",
+          "label": "Live Site \u2197",
           "url": "https://leafylife-pro.vercel.app"
         },
         {
           "type": "tag",
-          "label": "PWA · Free + Pro"
+          "label": "PWA \u00b7 Free + Pro"
         }
       ],
       "canvasType": "leafylife",
@@ -288,27 +288,27 @@
       "description": "Standalone operations dashboard for managing autonomous AI agents. Memory palace with wiki-link knowledge graphs, FTS5 search, health diagnostics. Agent fleet management, heartbeat monitoring, and processing pipelines (reflect, reweave, gap-detect, consolidate).",
       "features": [
         {
-          "icon": "🤖",
+          "icon": "\ud83e\udd16",
           "text": "Agent Fleet Manager"
         },
         {
-          "icon": "🧠",
+          "icon": "\ud83e\udde0",
           "text": "Memory Palace"
         },
         {
-          "icon": "🔗",
+          "icon": "\ud83d\udd17",
           "text": "Wiki-Link Graph"
         },
         {
-          "icon": "💓",
+          "icon": "\ud83d\udc93",
           "text": "Agent Heartbeats"
         },
         {
-          "icon": "🔍",
+          "icon": "\ud83d\udd0d",
           "text": "FTS5 Search"
         },
         {
-          "icon": "⚡",
+          "icon": "\u26a1",
           "text": "Standalone Server"
         }
       ],
@@ -322,7 +322,7 @@
       "links": [
         {
           "type": "tag",
-          "label": "DevOps Tool · Self-Hosted"
+          "label": "DevOps Tool \u00b7 Self-Hosted"
         }
       ],
       "canvasType": "missioncontrol",
@@ -338,22 +338,22 @@
       ],
       "name": "Brew Monitor",
       "role": "System Ops Dashboard",
-      "description": "Coffee-themed server monitoring dashboard. Realtime CPU, memory, disk, and network gauges with animated canvas charts. Latency heatmaps, uptime tracking, and alert system — all styled after a barista's workstation.",
+      "description": "Coffee-themed server monitoring dashboard. Realtime CPU, memory, disk, and network gauges with animated canvas charts. Latency heatmaps, uptime tracking, and alert system \u2014 all styled after a barista's workstation.",
       "features": [
         {
-          "icon": "☕",
+          "icon": "\u2615",
           "text": "CPU/Gauges"
         },
         {
-          "icon": "📊",
+          "icon": "\ud83d\udcca",
           "text": "Latency Heatmap"
         },
         {
-          "icon": "🔥",
+          "icon": "\ud83d\udd25",
           "text": "Alert System"
         },
         {
-          "icon": "✅",
+          "icon": "\u2705",
           "text": "Uptime Tracking"
         }
       ],
@@ -366,7 +366,7 @@
       "links": [
         {
           "type": "tag",
-          "label": "Dashboard · Standalone"
+          "label": "Dashboard \u00b7 Standalone"
         }
       ],
       "canvasType": "brewmonitor",
@@ -385,19 +385,19 @@
       "description": "Cyberpunk-styled daily AI news briefing. Aggregates and categorizes AI developments across research, industry, policy, and tools. Scanline aesthetics with real-time feed indicators and source ranking.",
       "features": [
         {
-          "icon": "📡",
+          "icon": "\ud83d\udce1",
           "text": "Live Feed Aggregation"
         },
         {
-          "icon": "🏷️",
+          "icon": "\ud83c\udff7\ufe0f",
           "text": "Auto Categorization"
         },
         {
-          "icon": "📉",
+          "icon": "\ud83d\udcc9",
           "text": "Source Ranking"
         },
         {
-          "icon": "⚡",
+          "icon": "\u26a1",
           "text": "Scanline UI"
         }
       ],
@@ -410,7 +410,7 @@
       "links": [
         {
           "type": "tag",
-          "label": "Briefing · Daily Digest"
+          "label": "Briefing \u00b7 Daily Digest"
         }
       ],
       "canvasType": "neuralfeed",
@@ -427,30 +427,30 @@
       ],
       "name": "Carrylink",
       "role": "Affiliate Card Studio",
-      "description": "The business card that pays you back. Design a physical-quality digital business card with a unique affiliate short-link baked into both the QR code and card design. Earn a revenue split every time someone scans and converts. Six card templates, four finish tiers, generative seals — no backend, no build step, fully self-contained.",
+      "description": "The business card that pays you back. Design a physical-quality digital business card with a unique affiliate short-link baked into both the QR code and card design. Earn a revenue split every time someone scans and converts. Six card templates, four finish tiers, generative seals \u2014 no backend, no build step, fully self-contained.",
       "features": [
         {
-          "icon": "🪪",
+          "icon": "\ud83e\udeaa",
           "text": "6 Card Templates"
         },
         {
-          "icon": "🔗",
+          "icon": "\ud83d\udd17",
           "text": "Affiliate Short Links"
         },
         {
-          "icon": "🖼️",
+          "icon": "\ud83d\uddbc\ufe0f",
           "text": "Generative Seal Identicons"
         },
         {
-          "icon": "✨",
-          "text": "4 Finish Tiers (Matte → Letterpress)"
+          "icon": "\u2728",
+          "text": "4 Finish Tiers (Matte \u2192 Letterpress)"
         },
         {
-          "icon": "📐",
+          "icon": "\ud83d\udcd0",
           "text": "QR Code + vCard"
         },
         {
-          "icon": "💾",
+          "icon": "\ud83d\udcbe",
           "text": "URL-Persisted State"
         }
       ],
@@ -465,12 +465,12 @@
       "links": [
         {
           "type": "github",
-          "label": "GitHub ↗",
+          "label": "GitHub \u2197",
           "url": "https://github.com/skyestrela/carrylink"
         },
         {
           "type": "tag",
-          "label": "SaaS · Free + Pro"
+          "label": "SaaS \u00b7 Free + Pro"
         }
       ],
       "canvasType": "carrylink",
@@ -489,19 +489,19 @@
       "description": "Landing page for an AI business intelligence service. Dark theme with red/gold accents. Problem-agitation-solution copy. Feature breakdown, pricing tiers, and urgency-driven CTAs. Designed for high-conversion B2B outreach.",
       "features": [
         {
-          "icon": "🎯",
+          "icon": "\ud83c\udfaf",
           "text": "Conversion Copy"
         },
         {
-          "icon": "💰",
+          "icon": "\ud83d\udcb0",
           "text": "Pricing Tiers"
         },
         {
-          "icon": "⚡",
+          "icon": "\u26a1",
           "text": "Urgency CTAs"
         },
         {
-          "icon": "📱",
+          "icon": "\ud83d\udcf1",
           "text": "Responsive"
         }
       ],
@@ -514,7 +514,7 @@
       "links": [
         {
           "type": "tag",
-          "label": "Landing Page · B2B SaaS"
+          "label": "Landing Page \u00b7 B2B SaaS"
         }
       ],
       "canvasType": "b2bintel",
@@ -534,27 +534,27 @@
       "description": "Track intermittent fasting with AI-powered food detection. Snap a meal photo and GCP Vision identifies the food, logs calories, and updates your fasting window. Earn achievements and tokens for consistency. Blockchain-backed reward system for completing fasting streaks.",
       "features": [
         {
-          "icon": "⏱️",
+          "icon": "\u23f1\ufe0f",
           "text": "Fasting Window Tracker"
         },
         {
-          "icon": "📷",
+          "icon": "\ud83d\udcf7",
           "text": "AI Food Detection"
         },
         {
-          "icon": "🏆",
+          "icon": "\ud83c\udfc6",
           "text": "Achievements & Streaks"
         },
         {
-          "icon": "🪙",
+          "icon": "\ud83e\ude99",
           "text": "Token Rewards"
         },
         {
-          "icon": "📊",
+          "icon": "\ud83d\udcca",
           "text": "Dashboard & Leaderboard"
         },
         {
-          "icon": "🔐",
+          "icon": "\ud83d\udd10",
           "text": "Auth & Profiles"
         }
       ],
@@ -569,7 +569,7 @@
       "links": [
         {
           "type": "tag",
-          "label": "Health · Fasting + AI"
+          "label": "Health \u00b7 Fasting + AI"
         }
       ],
       "canvasType": "fastingquest",
@@ -586,30 +586,30 @@
       ],
       "name": "Astrology Compass",
       "role": "Personal Cosmic GPS",
-      "description": "Your cosmic GPS — real-time astrological compass that calculates natal charts, transits, progressions, and daily readings from mean-longitude ephemeris. Animated zodiac wheel with house cusps, planet positions, and aspect lines. Lifetime timeline, eclipse tracker, Mercury retrograde alerts, mood journal, and rich transit-natal interpretations.",
+      "description": "Your cosmic GPS \u2014 real-time astrological compass that calculates natal charts, transits, progressions, and daily readings from mean-longitude ephemeris. Animated zodiac wheel with house cusps, planet positions, and aspect lines. Lifetime timeline, eclipse tracker, Mercury retrograde alerts, mood journal, and rich transit-natal interpretations.",
       "features": [
         {
-          "icon": "🧭",
+          "icon": "\ud83e\udded",
           "text": "Compass Direction Engine"
         },
         {
-          "icon": "♈",
+          "icon": "\u2648",
           "text": "Zodiac Wheel + House Cusps"
         },
         {
-          "icon": "⏳",
+          "icon": "\u23f3",
           "text": "Lifetime Timeline"
         },
         {
-          "icon": "📜",
+          "icon": "\ud83d\udcdc",
           "text": "Daily Transit Readings"
         },
         {
-          "icon": "🌑",
+          "icon": "\ud83c\udf11",
           "text": "Moon Phases & Eclipses"
         },
         {
-          "icon": "☿",
+          "icon": "\u263f",
           "text": "Mercury Retrograde Tracker"
         }
       ],
@@ -624,17 +624,17 @@
       "links": [
         {
           "type": "demo",
-          "label": "Live Site ↗",
+          "label": "Live Site \u2197",
           "url": "https://www.greensage.co.uk"
         },
         {
           "type": "pwa",
-          "label": "⬇ Install App",
+          "label": "\u2b07 Install App",
           "url": "/install"
         },
         {
           "type": "tag",
-          "label": "PWA · Free + Pro"
+          "label": "PWA \u00b7 Free + Pro"
         }
       ],
       "canvasType": "astrologycompass",
@@ -654,27 +654,27 @@
       "description": "Premium cloud storage with end-to-end encryption, instant share links with password protection, and real-time quota tracking. Drag-and-drop uploads, file type categorization, trash with restore, and a polished dark dashboard. Free tier with 2 GB, scalable to 200 GB on Pro.",
       "features": [
         {
-          "icon": "📦",
+          "icon": "\ud83d\udce6",
           "text": "2 GB Free + Pro Tiers"
         },
         {
-          "icon": "🔒",
+          "icon": "\ud83d\udd12",
           "text": "End-to-End Encrypted"
         },
         {
-          "icon": "🐗",
+          "icon": "\ud83d\udc17",
           "text": "Password-Protected Sharing"
         },
         {
-          "icon": "📁",
+          "icon": "\ud83d\udcc1",
           "text": "File Type Categorization"
         },
         {
-          "icon": "🗑️",
+          "icon": "\ud83d\uddd1\ufe0f",
           "text": "Trash & Restore"
         },
         {
-          "icon": "📊",
+          "icon": "\ud83d\udcca",
           "text": "Real-Time Storage Ring"
         }
       ],
@@ -688,12 +688,12 @@
       "links": [
         {
           "type": "demo",
-          "label": "Live Demo ↗",
+          "label": "Live Demo \u2197",
           "url": "http://localhost:3010"
         },
         {
           "type": "tag",
-          "label": "PWA · Free + Plus + Pro"
+          "label": "PWA \u00b7 Free + Plus + Pro"
         }
       ],
       "canvasType": "storagespace",
@@ -704,7 +704,7 @@
       "order": 12,
       "name": "Pulse",
       "role": "Full-Stack App",
-      "tagline": "AI-powered personal OS — think it, pulse it, done",
+      "tagline": "AI-powered personal OS \u2014 think it, pulse it, done",
       "description": "Pulse transforms scattered thoughts into structured action plans. Speak for 10 seconds and the AI extracts intents, recognizes dates, identifies habits, and places everything on a living EKG-style timeline. Never forget a thought again.",
       "tags": [
         "AI",
@@ -750,7 +750,7 @@
       "canvasType": "pulse",
       "links": [
         {
-          "text": "Live Demo ↗",
+          "text": "Live Demo \u2197",
           "url": "http://localhost:3011"
         }
       ]
@@ -766,30 +766,30 @@
       ],
       "name": "Cortex",
       "role": "Brain Training Games",
-      "description": "Train your brain with 7 cognitive categories — Memory, Focus, Logic, Math, Language, Music, Problem Solving. Procedural level generation with seeded PRNG means infinite levels, not hand-authored content. Dynamic difficulty adapts to your skill in real-time. Daily workouts, cognitive assessments, achievement system, confetti celebrations. Replaces £40/year subscription apps with a better free experience.",
+      "description": "Train your brain with 7 cognitive categories \u2014 Memory, Focus, Logic, Math, Language, Music, Problem Solving. Procedural level generation with seeded PRNG means infinite levels, not hand-authored content. Dynamic difficulty adapts to your skill in real-time. Daily workouts, cognitive assessments, achievement system, confetti celebrations. Replaces \u00a340/year subscription apps with a better free experience.",
       "features": [
         {
-          "icon": "🧠",
+          "icon": "\ud83e\udde0",
           "text": "7 Cognitive Categories"
         },
         {
-          "icon": "∞",
+          "icon": "\u221e",
           "text": "Procedural Level Generation"
         },
         {
-          "icon": "🔥",
+          "icon": "\ud83d\udd25",
           "text": "Dynamic Difficulty"
         },
         {
-          "icon": "🏋",
+          "icon": "\ud83c\udfcb",
           "text": "Daily Workouts"
         },
         {
-          "icon": "📊",
+          "icon": "\ud83d\udcca",
           "text": "IQ Assessment"
         },
         {
-          "icon": "🎉",
+          "icon": "\ud83c\udf89",
           "text": "Achievements & Confetti"
         }
       ],
@@ -807,12 +807,12 @@
       "links": [
         {
           "type": "live",
-          "label": "Live Demo ↗",
+          "label": "Live Demo \u2197",
           "url": "http://localhost:3020"
         },
         {
           "type": "tag",
-          "label": "PWA · Free + Pro · 7 Games"
+          "label": "PWA \u00b7 Free + Pro \u00b7 7 Games"
         }
       ],
       "canvasType": "cortex",
