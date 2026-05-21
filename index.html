@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lucas Studios — Creative Digital Works</title>
+  <meta name="description" content="Lucas Studios — building browser-first tools that work.">
+  <meta name="theme-color" content="#08090d">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='16' fill='%2308090d'/><text x='50' y='72' font-family='system-ui' font-size='60' font-weight='800' text-anchor='middle' fill='%236ee7b7'>L</text></svg>">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Syne:wght@400;500;600;700;800&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Cursor follower -->
+  <div class="cursor-glow" id="cursorGlow"></div>
+
+  <!-- Navigation -->
+  <nav class="nav">
+    <div class="nav-inner">
+      <a href="#hero" class="nav-logo">LUCAS<span class="accent">.</span>STUDIOS</a>
+      <div class="nav-links">
+        <a href="#work">Work</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero" id="hero">
+    <div class="hero-grid"></div>
+    <div class="hero-content">
+      <div class="hero-tag">
+        <span class="tag-dot"></span> <span id="heroTag">Creative Studio</span>
+      </div>
+      <h1 class="hero-title" id="heroTitle">
+        <!-- Filled by JS -->
+      </h1>
+      <p class="hero-sub" id="heroSub"></p>
+      <div class="hero-actions">
+        <a href="#work" class="btn-primary" id="heroCtaPrimary">View Projects</a>
+        <a href="#about" class="btn-ghost" id="heroCtaSecondary">About Studio</a>
+      </div>
+    </div>
+    <div class="hero-scroll">
+      <span>Scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- Work Section -->
+  <section class="work" id="work">
+    <div class="section-header">
+      <span class="section-num">01</span>
+      <div>
+        <h2 class="section-title">Selected Work</h2>
+        <p class="section-sub">Real apps solving real problems — no vaporware, no pitch decks.</p>
+      </div>
+    </div>
+    <div id="projectsContainer">
+      <!-- Rendered by JS from API -->
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section class="about" id="about">
+    <div class="section-header">
+      <span class="section-num">02</span>
+      <div>
+        <h2 class="section-title" id="aboutTitle">About the Studio</h2>
+        <p class="section-sub" id="aboutSub">One person. Many projects. All shipped.</p>
+      </div>
+    </div>
+
+    <div class="about-grid" id="aboutCards">
+      <!-- Rendered by JS -->
+    </div>
+
+    <div class="about-stats" id="aboutStats">
+      <!-- Rendered by JS -->
+    </div>
+  </section>
+
+  <!-- Contact / Footer -->
+  <section class="contact" id="contact">
+    <div class="section-header">
+      <span class="section-num">03</span>
+      <div>
+        <h2 class="section-title" id="contactTitle">Get in Touch</h2>
+        <p class="section-sub" id="contactSub">Got an idea? Let's make it real.</p>
+      </div>
+    </div>
+    <div class="contact-content">
+      <div class="contact-links" id="contactLinks">
+        <!-- Rendered by JS -->
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="footer-inner">
+      <span class="footer-logo">LUCAS<span class="accent">.</span>STUDIOS</span>
+      <span class="footer-copy" id="footerCopy">&copy; 2026 — Built with obsession and too much coffee.</span>
+      <a href="/admin" class="footer-admin">Admin</a>
+    </div>
+  </footer>
+
+  <script src="js/render.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

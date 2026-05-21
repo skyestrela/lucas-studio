@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lucas Studios — Admin</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='16' fill='%2308090d'/><text x='50' y='72' font-family='system-ui' font-size='60' font-weight='800' text-anchor='middle' fill='%236ee7b7'>L</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Syne:wght@400;500;600;700;800&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Login Screen -->
+  <div class="login-screen" id="loginScreen">
+    <div class="login-card">
+      <div class="login-logo">LUCAS<span class="accent">.</span>STUDIOS</div>
+      <p class="login-sub">Admin Dashboard</p>
+      <div id="loginForm">
+        <div class="field">
+          <label>Password</label>
+          <input type="password" id="loginPass" placeholder="Enter admin password" autocomplete="off">
+        </div>
+        <button class="btn-primary" id="loginBtn">Sign In</button>
+        <p class="login-hint" id="loginHint"></p>
+      </div>
+      <div id="setupForm" style="display:none">
+        <p class="setup-msg">No password set. Create one to secure the dashboard.</p>
+        <div class="field">
+          <label>New Password</label>
+          <input type="password" id="setupPass" placeholder="Min 6 characters" autocomplete="off">
+        </div>
+        <div class="field">
+          <label>Confirm Password</label>
+          <input type="password" id="setupPassConfirm" placeholder="Repeat password" autocomplete="off">
+        </div>
+        <button class="btn-primary" id="setupBtn">Create & Sign In</button>
+        <p class="login-hint" id="setupHint"></p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Dashboard -->
+  <div class="dashboard" id="dashboard" style="display:none">
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <span class="sidebar-logo">LUCAS<span class="accent">.</span>STUDIOS</span>
+        <span class="sidebar-badge">ADMIN</span>
+      </div>
+      <nav class="sidebar-nav">
+        <button class="nav-item active" data-section="site">⚙ Site Settings</button>
+        <button class="nav-item" data-section="hero">🏠 Hero</button>
+        <button class="nav-item" data-section="projects">📂 Projects</button>
+        <button class="nav-item" data-section="about">ℹ About</button>
+        <button class="nav-item" data-section="contact">📬 Contact</button>
+      </nav>
+      <div class="sidebar-footer">
+        <a href="/" class="sidebar-link" target="_blank">View Site ↗</a>
+        <button class="sidebar-link" id="logoutBtn">Sign Out</button>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main">
+      <!-- Site Settings -->
+      <section class="editor" id="editor-site">
+        <div class="editor-header">
+          <h2>Site Settings</h2>
+          <p>Globally control title, description, and footer.</p>
+        </div>
+        <div class="editor-body">
+          <div class="field">
+            <label>Site Title</label>
+            <input type="text" data-path="site.title" placeholder="Lucas Studios — Creative Digital Works">
+          </div>
+          <div class="field">
+            <label>Meta Description</label>
+            <textarea data-path="site.description" rows="3" placeholder="SEO description..."></textarea>
+          </div>
+          <div class="field">
+            <label>Footer Tagline</label>
+            <input type="text" data-path="site.footerTagline" placeholder="Built with obsession and too much coffee.">
+          </div>
+          <div class="field">
+            <label>Change Admin Password</label>
+            <div class="inline-fields">
+              <input type="password" id="newPassword" placeholder="New password (min 6)">
+              <button class="btn-sm" id="changePassBtn">Update</button>
+            </div>
+          </div>
+          <button class="btn-primary save-btn" data-endpoint="/api/content/site" data-path="site">Save Site Settings</button>
+        </div>
+      </section>
+
+      <!-- Hero -->
+      <section class="editor" id="editor-hero" style="display:none">
+        <div class="editor-header">
+          <h2>Hero Section</h2>
+          <p>First impression — tagline, title, subtitle, CTAs.</p>
+        </div>
+        <div class="editor-body">
+          <div class="field">
+            <label>Tag Badge</label>
+            <input type="text" data-path="hero.tag" placeholder="Creative Studio">
+          </div>
+          <div class="field">
+            <label>Title Lines (one per line)</label>
+            <textarea data-path="hero.titleLines" rows="3" placeholder="Building the\nfuture, one\napp at a time."></textarea>
+            <span class="field-hint">Each line becomes a separate animated title line</span>
+          </div>
+          <div class="field">
+            <label>Subtitle</label>
+            <textarea data-path="hero.subtitle" rows="3" placeholder="Piano tuners. Plant lovers..."></textarea>
+          </div>
+          <div class="fields-row">
+            <div class="field">
+              <label>Primary CTA</label>
+              <input type="text" data-path="hero.ctaPrimary" placeholder="View Projects">
+            </div>
+            <div class="field">
+              <label>Secondary CTA</label>
+              <input type="text" data-path="hero.ctaSecondary" placeholder="About Studio">
+            </div>
+          </div>
+          <button class="btn-primary save-btn" data-endpoint="/api/content/hero" data-path="hero">Save Hero</button>
+        </div>
+      </section>
+
+      <!-- Projects -->
+      <section class="editor" id="editor-projects" style="display:none">
+        <div class="editor-header">
+          <h2>Projects</h2>
+          <p>Add, edit, reorder, or remove projects from the showcase.</p>
+          <button class="btn-primary" id="addProjectBtn">+ Add Project</button>
+        </div>
+        <div class="projects-list" id="projectsList">
+          <!-- Rendered dynamically -->
+        </div>
+      </section>
+
+      <!-- About -->
+      <section class="editor" id="editor-about" style="display:none">
+        <div class="editor-header">
+          <h2>About Section</h2>
+          <p>Philosophy cards and count-up stats.</p>
+        </div>
+        <div class="editor-body">
+          <div class="fields-row">
+            <div class="field">
+              <label>Section Title</label>
+              <input type="text" data-path="about.title" placeholder="About the Studio">
+            </div>
+            <div class="field">
+              <label>Section Subtitle</label>
+              <input type="text" data-path="about.subtitle" placeholder="One person. Many projects.">
+            </div>
+          </div>
+          <div class="sub-editor">
+            <label class="sub-label">Philosophy Cards</label>
+            <div id="aboutCards">
+              <!-- Rendered dynamically -->
+            </div>
+            <button class="btn-sm" id="addCardBtn">+ Add Card</button>
+          </div>
+          <div class="sub-editor">
+            <label class="sub-label">Stats</label>
+            <div id="aboutStats">
+              <!-- Rendered dynamically -->
+            </div>
+            <button class="btn-sm" id="addStatBtn">+ Add Stat</button>
+          </div>
+          <button class="btn-primary save-btn" data-endpoint="/api/content/about" data-path="about">Save About</button>
+        </div>
+      </section>
+
+      <!-- Contact -->
+      <section class="editor" id="editor-contact" style="display:none">
+        <div class="editor-header">
+          <h2>Contact Section</h2>
+          <p>Contact links and section text.</p>
+        </div>
+        <div class="editor-body">
+          <div class="fields-row">
+            <div class="field">
+              <label>Section Title</label>
+              <input type="text" data-path="contact.title" placeholder="Get in Touch">
+            </div>
+            <div class="field">
+              <label>Section Subtitle</label>
+              <input type="text" data-path="contact.subtitle" placeholder="Got an idea?">
+            </div>
+          </div>
+          <div class="sub-editor">
+            <label class="sub-label">Contact Links</label>
+            <div id="contactLinks">
+              <!-- Rendered dynamically -->
+            </div>
+            <button class="btn-sm" id="addContactLinkBtn">+ Add Link</button>
+          </div>
+          <button class="btn-primary save-btn" data-endpoint="/api/content/contact" data-path="contact">Save Contact</button>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <!-- Project Edit Modal -->
+  <div class="modal-overlay" id="projectModal" style="display:none">
+    <div class="modal">
+      <div class="modal-header">
+        <h3 id="modalTitle">Add Project</h3>
+        <button class="modal-close" id="modalClose">✕</button>
+      </div>
+      <div class="modal-body">
+        <input type="hidden" id="projId">
+        <div class="fields-row">
+          <div class="field">
+            <label>Project ID (slug)</label>
+            <input type="text" id="projIdInput" placeholder="my-project">
+            <span class="field-hint">Used for canvas binding. Lowercase, no spaces.</span>
+          </div>
+          <div class="field">
+            <label>Display Order</label>
+            <input type="number" id="projOrder" placeholder="1">
+          </div>
+        </div>
+        <div class="fields-row">
+          <div class="field">
+            <label>Project Name</label>
+            <input type="text" id="projName" placeholder="My Project">
+          </div>
+          <div class="field">
+            <label>Role / Subtitle</label>
+            <input type="text" id="projRole" placeholder="What it does">
+          </div>
+        </div>
+        <div class="field">
+          <label>Description</label>
+          <textarea id="projDesc" rows="4" placeholder="Detailed description..."></textarea>
+        </div>
+        <div class="field">
+          <label>Tags (comma-separated)</label>
+          <input type="text" id="projTags" placeholder="PWA, React, AI">
+        </div>
+        <div class="field">
+          <label>Tech Stack (comma-separated)</label>
+          <input type="text" id="projStack" placeholder="React 18, Vite, Supabase">
+        </div>
+        <div class="field">
+          <label>Canvas Type</label>
+          <select id="projCanvasType">
+            <option value="keytune">KeyTune (tuning meter)</option>
+            <option value="moneystack">Money Stack (score bars)</option>
+            <option value="leafylife">LeafyLife (bloom grid)</option>
+            <option value="missioncontrol">Mission Control (agent network)</option>
+            <option value="brewmonitor">Brew Monitor (coffee gauges)</option>
+            <option value="neuralfeed">Neural Feed (cyberpunk feed)</option>
+            <option value="b2bintel">B2B Intel (landing page)</option>
+            <option value="custom">Custom (manual canvas)</option>
+          </select>
+        </div>
+        <div class="field">
+          <label>Preview Background CSS</label>
+          <input type="text" id="projPreviewBg" placeholder="linear-gradient(135deg, #0d1117 0%, #0a1628 100%)">
+        </div>
+
+        <!-- Features -->
+        <div class="sub-editor">
+          <label class="sub-label">Features</label>
+          <div id="projFeatures"></div>
+          <button class="btn-sm" id="addFeatureBtn">+ Add Feature</button>
+        </div>
+
+        <!-- Links -->
+        <div class="sub-editor">
+          <label class="sub-label">Links</label>
+          <div id="projLinks"></div>
+          <button class="btn-sm" id="addLinkBtn">+ Add Link</button>
+        </div>
+
+        <div class="modal-actions">
+          <button class="btn-ghost" id="modalCancel">Cancel</button>
+          <button class="btn-primary" id="modalSave">Save Project</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast -->
+  <div class="toast" id="toast" style="display:none"></div>
+
+  <script src="app.js"></script>
+</body>
+</html>
