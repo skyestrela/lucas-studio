@@ -1563,6 +1563,10 @@ const canvasDrawMap = {
   storagespaceCanvas: drawStorageSpace,
   cortexCanvas: drawCortex,
   pulseCanvas: drawPulse,
+  winneryCanvas: drawWinnery,
+  newsvaleyCanvas: drawNewsvaley,
+  friendlygameCanvas: drawFriendlyGame,
+  groundherbsCanvas: drawGroundHerbs,
 };
 
 let startTime = null;
@@ -2033,6 +2037,490 @@ function drawCortex(time) {
   ctx.fillStyle = 'rgba(226,232,240,0.4)';
   ctx.textAlign = 'left';
   ctx.fillText('CORTEX', 10, 18);
+}
+
+// \u2500\u2500 Winnery \u2014 Tenuta Breva Wine Estate \u2500\u2500
+function drawWinnery(time) {
+  const result = getCtx('winneryCanvas', 400, 280);
+  if (!result) return;
+  const { ctx, w: W, h: H } = result;
+  const t = time / 1000;
+
+  // Deep cellar background
+  ctx.fillStyle = '#0b0806';
+  ctx.fillRect(0, 0, W, H);
+
+  // Subtle aged-parchment vignette
+  const vig = ctx.createRadialGradient(W / 2, H / 2, 60, W / 2, H / 2, W * 0.7);
+  vig.addColorStop(0, 'rgba(139,60,20,0.04)');
+  vig.addColorStop(1, 'rgba(0,0,0,0.5)');
+  ctx.fillStyle = vig;
+  ctx.fillRect(0, 0, W, H);
+
+  // Bottle position
+  const bx = W / 2, bby = H * 0.82;
+  const bh = H * 0.72, bw = 44;
+  const neckH = bh * 0.32, neckW = 14;
+  const shoulderH = bh * 0.18;
+
+  // Wine fill \u2014 animated level
+  const wineTop = bby - bh * 0.55 + Math.sin(t * 0.6) * 3;
+  ctx.save();
+  ctx.beginPath();
+  ctx.moveTo(bx - bw / 2, bby);
+  ctx.lineTo(bx - bw / 2, bby - (bh - neckH - shoulderH));
+  ctx.quadraticCurveTo(bx - bw / 2, bby - (bh - neckH), bx - neckW / 2, bby - (bh - neckH));
+  ctx.lineTo(bx - neckW / 2, bby - bh);
+  ctx.lineTo(bx + neckW / 2, bby - bh);
+  ctx.lineTo(bx + neckW / 2, bby - (bh - neckH));
+  ctx.quadraticCurveTo(bx + bw / 2, bby - (bh - neckH), bx + bw / 2, bby - (bh - neckH - shoulderH));
+  ctx.lineTo(bx + bw / 2, bby);
+  ctx.closePath();
+  ctx.clip();
+
+  // Wine color fill
+  const wineGrad = ctx.createLinearGradient(bx - bw / 2, 0, bx + bw / 2, 0);
+  wineGrad.addColorStop(0, '#3d0a14');
+  wineGrad.addColorStop(0.5, '#6d1f2a');
+  wineGrad.addColorStop(1, '#4a0f18');
+  ctx.fillStyle = wineGrad;
+  ctx.fillRect(bx - bw / 2, wineTop, bw, bby - wineTop);
+
+  // Wine surface shimmer
+  ctx.beginPath();
+  ctx.ellipse(bx, wineTop, bw / 2, 3, 0, 0, Math.PI * 2);
+  ctx.fillStyle = 'rgba(180,80,80,0.25)';
+  ctx.fill();
+  ctx.restore();
+
+  // Bottle outline
+  ctx.beginPath();
+  ctx.moveTo(bx - bw / 2, bby);
+  ctx.lineTo(bx - bw / 2, bby - (bh - neckH - shoulderH));
+  ctx.quadraticCurveTo(bx - bw / 2, bby - (bh - neckH), bx - neckW / 2, bby - (bh - neckH));
+  ctx.lineTo(bx - neckW / 2, bby - bh);
+  ctx.lineTo(bx + neckW / 2, bby - bh);
+  ctx.lineTo(bx + neckW / 2, bby - (bh - neckH));
+  ctx.quadraticCurveTo(bx + bw / 2, bby - (bh - neckH), bx + bw / 2, bby - (bh - neckH - shoulderH));
+  ctx.lineTo(bx + bw / 2, bby);
+  ctx.strokeStyle = 'rgba(200,164,90,0.35)';
+  ctx.lineWidth = 1;
+  ctx.stroke();
+
+  // Label background
+  const labelY = bby - bh * 0.62, labelH = bh * 0.3, labelW = bw - 4;
+  ctx.fillStyle = '#f5e8c0';
+  ctx.fillRect(bx - labelW / 2, labelY, labelW, labelH);
+  ctx.strokeStyle = 'rgba(160,120,50,0.5)';
+  ctx.lineWidth = 0.5;
+  ctx.strokeRect(bx - labelW / 2 + 2, labelY + 2, labelW - 4, labelH - 4);
+
+  // Label text \u2014 MC crest
+  ctx.fillStyle = '#2a1505';
+  ctx.font = 'bold 9px Georgia, serif';
+  ctx.textAlign = 'center';
+  ctx.fillText('TENUTA', bx, labelY + 10);
+  ctx.font = 'bold 12px Georgia, serif';
+  ctx.fillText('BREVA', bx, labelY + 22);
+  ctx.font = '6px Georgia, serif';
+  ctx.fillStyle = '#6b3a10';
+  ctx.fillText('PIEMONTE · EST. 1912', bx, labelY + 32);
+
+  // Foil cap
+  const foilGrad = ctx.createLinearGradient(bx - neckW / 2, 0, bx + neckW / 2, 0);
+  foilGrad.addColorStop(0, '#8a7030');
+  foilGrad.addColorStop(0.5, '#c8a45a');
+  foilGrad.addColorStop(1, '#8a7030');
+  ctx.fillStyle = foilGrad;
+  ctx.fillRect(bx - neckW / 2, bby - bh, neckW, 10);
+
+  // Floating star ratings (right side)
+  const stars = ['\u2605\u2605\u2605\u2605\u2605', '\u2605\u2605\u2605\u2605\u2606', '\u2605\u2605\u2605\u2605\u2605'];
+  const wines = ['Bordeaux 2019', 'Burgundy 2020', 'Rh\u00f4ne 2021'];
+  for (let i = 0; i < 3; i++) {
+    const ry = H * 0.18 + i * 55 + Math.sin(t * 0.8 + i) * 3;
+    const rx = W * 0.72;
+    ctx.fillStyle = 'rgba(15,10,5,0.75)';
+    ctx.fillRect(rx - 2, ry - 11, 80, 32);
+    ctx.strokeStyle = 'rgba(200,164,90,0.2)';
+    ctx.lineWidth = 0.5;
+    ctx.strokeRect(rx - 2, ry - 11, 80, 32);
+    ctx.font = '7px JetBrains Mono, monospace';
+    ctx.fillStyle = 'rgba(200,164,90,0.9)';
+    ctx.textAlign = 'left';
+    ctx.fillText(wines[i], rx + 2, ry);
+    ctx.fillStyle = '#c8a45a';
+    ctx.font = '9px sans-serif';
+    ctx.fillText(stars[i], rx + 2, ry + 13);
+  }
+
+  // Title
+  ctx.font = 'bold 10px "Space Grotesk", sans-serif';
+  ctx.fillStyle = 'rgba(200,164,90,0.7)';
+  ctx.textAlign = 'left';
+  ctx.fillText('TENUTA BREVA', 10, 18);
+  ctx.font = '8px "Space Grotesk", sans-serif';
+  ctx.fillStyle = 'rgba(200,164,90,0.35)';
+  ctx.fillText('PIEMONTE \u00b7 EST. 1912', 10, 30);
+}
+
+// \u2500\u2500 Newsvaley \u2014 The Daily Bloom News Platform \u2500\u2500
+function drawNewsvaley(time) {
+  const result = getCtx('newsvaleyCanvas', 400, 280);
+  if (!result) return;
+  const { ctx, w: W, h: H } = result;
+  const t = time / 1000;
+
+  // Newsprint dark background
+  ctx.fillStyle = '#110e08';
+  ctx.fillRect(0, 0, W, H);
+
+  // Subtle warm paper texture lines
+  for (let i = 0; i < H; i += 4) {
+    ctx.fillStyle = `rgba(255,240,200,${0.012 + (i % 8 === 0 ? 0.008 : 0)})`;
+    ctx.fillRect(0, i, W, 1);
+  }
+
+  // Masthead strip
+  ctx.fillStyle = '#f6f0e2';
+  ctx.fillRect(0, 0, W, 32);
+  ctx.fillStyle = '#1a1814';
+  ctx.font = 'bold 16px Georgia, serif';
+  ctx.textAlign = 'center';
+  ctx.fillText('THE DAILY BLOOM', W / 2, 21);
+  ctx.font = '7px monospace';
+  ctx.fillStyle = '#5a5040';
+  ctx.fillText('POSITIVE NEWS \u00b7 EST. 2024', W / 2, 29);
+
+  // Optimism index ticker
+  ctx.fillStyle = '#1a1814';
+  ctx.fillRect(0, 32, W, 14);
+  const tickerText = '  OPTIMISM INDEX +0.42 \u2191  \u00b7  CORAL REEFS RECOVERING  \u00b7  LITERACY RATES UP 12%  \u00b7  NEW SOLAR RECORD  \u00b7  ';
+  const tickerX = -((t * 40) % (W * 1.8));
+  ctx.font = '8px monospace';
+  ctx.fillStyle = '#d4890a';
+  ctx.textAlign = 'left';
+  ctx.fillText(tickerText + tickerText, tickerX, 42);
+
+  // Pipeline funnel (main visual)
+  const stages = [
+    { label: 'INGEST', count: 184, color: '#3a6b8a', pct: 1.0 },
+    { label: 'SCORE', count: 94, color: '#4a8a5a', pct: 0.51 },
+    { label: 'EDIT', count: 31, color: '#8a6a2a', pct: 0.34 },
+    { label: 'PUBLISH', count: 12, color: '#d4890a', pct: 0.39 },
+  ];
+  const funnelY = 58, funnelH = H - 80, stageW = (W - 40) / stages.length - 8;
+  stages.forEach((s, i) => {
+    const sx = 20 + i * (stageW + 8);
+    const barH = funnelH * s.pct;
+    const barY = funnelY + funnelH - barH;
+
+    // Bar track
+    ctx.fillStyle = 'rgba(255,255,255,0.04)';
+    ctx.fillRect(sx, funnelY, stageW, funnelH);
+
+    // Animated bar
+    const animH = barH * Math.min(1, t * 0.5);
+    ctx.fillStyle = s.color + 'cc';
+    ctx.fillRect(sx, funnelY + funnelH - animH, stageW, animH);
+
+    // Count
+    ctx.font = 'bold 14px Georgia, serif';
+    ctx.fillStyle = '#f6f0e2';
+    ctx.textAlign = 'center';
+    ctx.fillText(s.count, sx + stageW / 2, barY - 6);
+
+    // Label
+    ctx.font = '7px monospace';
+    ctx.fillStyle = 'rgba(200,180,140,0.6)';
+    ctx.fillText(s.label, sx + stageW / 2, H - 14);
+
+    // Arrow
+    if (i < stages.length - 1) {
+      ctx.fillStyle = 'rgba(200,180,140,0.3)';
+      ctx.font = '10px sans-serif';
+      ctx.fillText('\u203a', sx + stageW + 3, funnelY + funnelH / 2);
+    }
+  });
+
+  // Live ingest dot
+  const blinkAlpha = 0.4 + 0.6 * Math.abs(Math.sin(t * 2));
+  ctx.beginPath();
+  ctx.arc(W - 14, 52, 4, 0, Math.PI * 2);
+  ctx.fillStyle = `rgba(74,138,90,${blinkAlpha})`;
+  ctx.fill();
+  ctx.font = '7px monospace';
+  ctx.fillStyle = 'rgba(74,138,90,0.7)';
+  ctx.textAlign = 'right';
+  ctx.fillText('LIVE', W - 20, 55);
+
+  // Cron status badges at bottom
+  const jobs = [
+    { name: '*/15 ingest', status: 'OK', color: '#4a8a5a' },
+    { name: '0 * * edit', status: 'OK', color: '#4a8a5a' },
+    { name: '0 6 publish', status: 'RUN', color: '#d4890a' },
+  ];
+  jobs.forEach((j, i) => {
+    const jx = 14 + i * 130;
+    ctx.fillStyle = 'rgba(255,255,255,0.05)';
+    ctx.fillRect(jx, H - 28, 120, 16);
+    ctx.font = '7px monospace';
+    ctx.textAlign = 'left';
+    ctx.fillStyle = 'rgba(200,180,140,0.5)';
+    ctx.fillText(j.name, jx + 4, H - 16);
+    ctx.fillStyle = j.color;
+    ctx.fillText(j.status, jx + 100, H - 16);
+  });
+}
+
+// \u2500\u2500 Friendly Game \u2014 Drift 60s Prediction Game \u2500\u2500
+function drawFriendlyGame(time) {
+  const result = getCtx('friendlygameCanvas', 400, 280);
+  if (!result) return;
+  const { ctx, w: W, h: H } = result;
+  const t = time / 1000;
+
+  // Clean dark fintech background
+  ctx.fillStyle = '#1a1916';
+  ctx.fillRect(0, 0, W, H);
+
+  // Subtle grid
+  ctx.strokeStyle = 'rgba(255,255,255,0.03)';
+  ctx.lineWidth = 0.5;
+  for (let gy = 40; gy < H - 30; gy += 25) {
+    ctx.beginPath(); ctx.moveTo(40, gy); ctx.lineTo(W - 20, gy); ctx.stroke();
+  }
+
+  // Price axis labels
+  const prices = [105, 100, 95, 90, 85];
+  ctx.font = '8px JetBrains Mono, monospace';
+  ctx.fillStyle = 'rgba(255,255,255,0.2)';
+  ctx.textAlign = 'right';
+  prices.forEach((p, i) => {
+    const py = 45 + i * 37;
+    ctx.fillText(p, 36, py + 3);
+  });
+
+  // Drift line \u2014 seeded random walk
+  const chartX = 45, chartW = W - 65, chartY = 50, chartH = H - 90;
+  const STEPS = 80;
+  let linePoints = [];
+  let lv = 0.5;
+  for (let i = 0; i <= STEPS; i++) {
+    const phase = t * 0.4 + i * 0.31;
+    lv = Math.max(0.05, Math.min(0.95, lv + (Math.sin(phase * 1.7) * 0.015 + Math.sin(phase * 3.1) * 0.008)));
+    linePoints.push({ x: chartX + (i / STEPS) * chartW, y: chartY + (1 - lv) * chartH });
+  }
+
+  // Area fill under line
+  const areaGrad = ctx.createLinearGradient(0, chartY, 0, chartY + chartH);
+  areaGrad.addColorStop(0, 'rgba(93,203,134,0.15)');
+  areaGrad.addColorStop(1, 'rgba(93,203,134,0)');
+  ctx.beginPath();
+  ctx.moveTo(linePoints[0].x, chartY + chartH);
+  linePoints.forEach(p => ctx.lineTo(p.x, p.y));
+  ctx.lineTo(linePoints[linePoints.length - 1].x, chartY + chartH);
+  ctx.closePath();
+  ctx.fillStyle = areaGrad;
+  ctx.fill();
+
+  // Line stroke
+  ctx.beginPath();
+  linePoints.forEach((p, i) => i === 0 ? ctx.moveTo(p.x, p.y) : ctx.lineTo(p.x, p.y));
+  ctx.strokeStyle = '#5dcb86';
+  ctx.lineWidth = 2;
+  ctx.lineJoin = 'round';
+  ctx.stroke();
+
+  // Pulsing tip
+  const tip = linePoints[linePoints.length - 1];
+  const pulseR = 3 + Math.sin(t * 4) * 2;
+  ctx.beginPath();
+  ctx.arc(tip.x, tip.y, pulseR * 2.5, 0, Math.PI * 2);
+  ctx.fillStyle = 'rgba(93,203,134,0.15)';
+  ctx.fill();
+  ctx.beginPath();
+  ctx.arc(tip.x, tip.y, 3, 0, Math.PI * 2);
+  ctx.fillStyle = '#5dcb86';
+  ctx.fill();
+
+  // Player anchors
+  const anchors = [
+    { pct: 0.35, color: '#5dcb86', stake: '$25', label: 'You' },
+    { pct: 0.52, color: '#6366f1', stake: '$10', label: 'Alex' },
+    { pct: 0.22, color: '#f59e0b', stake: '$50', label: 'Sam' },
+  ];
+  anchors.forEach(a => {
+    const ay = chartY + a.pct * chartH;
+    ctx.beginPath();
+    ctx.moveTo(chartX, ay);
+    ctx.lineTo(chartX + chartW, ay);
+    ctx.strokeStyle = a.color + '40';
+    ctx.lineWidth = 1;
+    ctx.setLineDash([4, 4]);
+    ctx.stroke();
+    ctx.setLineDash([]);
+
+    // Anchor diamond
+    ctx.save();
+    ctx.translate(chartX + chartW * 0.3, ay);
+    ctx.rotate(Math.PI / 4);
+    ctx.fillStyle = a.color;
+    ctx.fillRect(-4, -4, 8, 8);
+    ctx.restore();
+
+    ctx.font = '7px JetBrains Mono, monospace';
+    ctx.fillStyle = a.color;
+    ctx.textAlign = 'left';
+    ctx.fillText(`${a.label} ${a.stake}`, chartX + chartW * 0.3 + 10, ay + 3);
+  });
+
+  // Round timer
+  const roundPct = (t * 0.25) % 1;
+  const secondsLeft = Math.floor((1 - roundPct) * 60);
+  ctx.fillStyle = 'rgba(26,25,22,0.9)';
+  ctx.fillRect(W - 70, 4, 66, 30);
+  ctx.strokeStyle = 'rgba(93,203,134,0.3)';
+  ctx.lineWidth = 1;
+  ctx.strokeRect(W - 70, 4, 66, 30);
+  ctx.font = 'bold 18px JetBrains Mono, monospace';
+  ctx.fillStyle = secondsLeft < 15 ? '#f87171' : '#5dcb86';
+  ctx.textAlign = 'center';
+  ctx.fillText(String(secondsLeft).padStart(2, '0') + 's', W - 37, 24);
+
+  // Pool size
+  ctx.font = '7px JetBrains Mono, monospace';
+  ctx.fillStyle = 'rgba(255,255,255,0.4)';
+  ctx.textAlign = 'left';
+  ctx.fillText('POOL', 10, 20);
+  ctx.font = 'bold 11px JetBrains Mono, monospace';
+  ctx.fillStyle = '#fff';
+  ctx.fillText('$' + (247 + Math.floor(Math.sin(t * 0.3) * 15)), 10, 32);
+
+  // Title
+  ctx.font = 'bold 10px "Space Grotesk", sans-serif';
+  ctx.fillStyle = 'rgba(93,203,134,0.7)';
+  ctx.textAlign = 'right';
+  ctx.fillText('DRIFT', W - 80, 20);
+
+  // Bottom phase label
+  const phase = roundPct < 0.17 ? 'OPEN \u2014 PLACE ANCHOR' : roundPct < 0.92 ? 'DRIFTING\u2026' : 'SETTLING';
+  const phaseColor = roundPct < 0.17 ? '#5dcb86' : roundPct < 0.92 ? '#94a3b8' : '#f59e0b';
+  ctx.font = '8px JetBrains Mono, monospace';
+  ctx.fillStyle = phaseColor;
+  ctx.textAlign = 'center';
+  ctx.fillText(phase, W / 2, H - 8);
+}
+
+// \u2500\u2500 Ground Herbs \u2014 GROUND Plant Powder Apothecary \u2500\u2500
+function drawGroundHerbs(time) {
+  const result = getCtx('groundherbsCanvas', 400, 280);
+  if (!result) return;
+  const { ctx, w: W, h: H } = result;
+  const t = time / 1000;
+
+  // Kraft cream background
+  ctx.fillStyle = '#efe6d6';
+  ctx.fillRect(0, 0, W, H);
+
+  // Subtle grain texture
+  for (let i = 0; i < 80; i++) {
+    const gx = (i * 73.3) % W;
+    const gy = (i * 51.7) % H;
+    ctx.fillStyle = `rgba(90,60,20,${0.03 + (i % 3) * 0.01})`;
+    ctx.fillRect(gx, gy, 1, 1);
+  }
+
+  // Horizontal rule
+  ctx.strokeStyle = '#c9b998';
+  ctx.lineWidth = 0.5;
+  ctx.beginPath(); ctx.moveTo(20, 36); ctx.lineTo(W - 20, 36); ctx.stroke();
+  ctx.beginPath(); ctx.moveTo(20, 40); ctx.lineTo(W - 20, 40); ctx.stroke();
+
+  // Masthead
+  ctx.font = 'bold 22px Georgia, serif';
+  ctx.fillStyle = '#1a1410';
+  ctx.textAlign = 'center';
+  ctx.fillText('G R O U N D', W / 2, 28);
+  ctx.font = '7px monospace';
+  ctx.fillStyle = '#7a6a52';
+  ctx.fillText('BOTANICAL POWDER APOTHECARY', W / 2, 50);
+
+  // Jar grid \u2014 3 animated product jars
+  const jars = [
+    { name: 'ASHWAGANDHA', sub: 'Root Powder', color: '#c87840', x: W * 0.18 },
+    { name: 'LION\'S MANE', sub: 'Mushroom', color: '#8a9a5a', x: W * 0.5 },
+    { name: 'TURMERIC', sub: 'Gold Powder', color: '#d4890a', x: W * 0.82 },
+  ];
+
+  jars.forEach((j, i) => {
+    const jy = H * 0.55;
+    const jw = 44, jh = 54;
+    const floatY = Math.sin(t * 0.7 + i * 1.1) * 4;
+
+    // Jar body
+    ctx.fillStyle = '#f7f0e0';
+    ctx.strokeStyle = '#c9b998';
+    ctx.lineWidth = 1;
+    ctx.beginPath();
+    ctx.roundRect(j.x - jw / 2, jy - jh / 2 + floatY, jw, jh, [3, 3, 6, 6]);
+    ctx.fill();
+    ctx.stroke();
+
+    // Lid
+    ctx.fillStyle = j.color;
+    ctx.beginPath();
+    ctx.roundRect(j.x - jw / 2 - 2, jy - jh / 2 - 10 + floatY, jw + 4, 12, [4, 4, 0, 0]);
+    ctx.fill();
+
+    // Powder color band
+    ctx.fillStyle = j.color + '30';
+    ctx.fillRect(j.x - jw / 2 + 2, jy + jh / 2 - 20 + floatY, jw - 4, 18);
+
+    // Label text
+    ctx.font = 'bold 6px Georgia, serif';
+    ctx.fillStyle = '#1a1410';
+    ctx.textAlign = 'center';
+    ctx.fillText(j.name, j.x, jy + floatY - 2);
+    ctx.font = '5.5px monospace';
+    ctx.fillStyle = '#7a6a52';
+    ctx.fillText(j.sub, j.x, jy + floatY + 8);
+
+    // Price tag
+    ctx.font = 'bold 8px monospace';
+    ctx.fillStyle = j.color;
+    ctx.fillText('\u00a328', j.x, jy + jh / 2 + floatY + 14);
+  });
+
+  // Floating powder particles
+  for (let i = 0; i < 18; i++) {
+    const px = 60 + ((i * 89.3 + t * 20) % (W - 80));
+    const py = H * 0.38 + Math.sin(t * 0.5 + i * 0.7) * 18 + (i * 7) % 30;
+    const colors = ['#c87840', '#8a9a5a', '#d4890a', '#b85a3a'];
+    ctx.beginPath();
+    ctx.arc(px, py, 1.5 + (i % 3) * 0.5, 0, Math.PI * 2);
+    ctx.fillStyle = colors[i % 4] + '80';
+    ctx.fill();
+  }
+
+  // Bottom strip
+  ctx.fillStyle = '#1a1410';
+  ctx.fillRect(0, H - 26, W, 26);
+  const tags = ['ADAPTOGENS', 'MUSHROOMS', 'AYURVEDIC', 'GREENS', 'ROOTS'];
+  ctx.font = '7px monospace';
+  ctx.fillStyle = 'rgba(239,230,214,0.5)';
+  ctx.textAlign = 'left';
+  tags.forEach((tag, i) => {
+    ctx.fillText('\u00b7 ' + tag, 14 + i * 76, H - 10);
+  });
+
+  // Currency badge
+  ctx.fillStyle = '#b85a3a';
+  ctx.fillRect(W - 68, H - 48, 52, 18);
+  ctx.font = 'bold 7px monospace';
+  ctx.fillStyle = '#fff';
+  ctx.textAlign = 'center';
+  ctx.fillText('USD \u00b7 GBP \u00b7 EUR', W - 42, H - 36);
 }
 
 ;

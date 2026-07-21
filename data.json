@@ -2,8 +2,7 @@
   "site": {
     "title": "Lucas Studios \u2014 Creative Digital Works",
     "description": "Lucas Studios \u2014 building browser-first tools that work. Piano tuners, income platforms, plant care, AI ops, dashboards, briefings.",
-    "footerTagline": "Built with obsession and too much coffee.",
-    "adminPasswordHash": "$2b$10$YZC/jcDBya0X7Q878E3hpeL.OpZKKnhcFp6BBypmeyAKkgzhl5XgC"
+    "footerTagline": "Built with obsession and too much coffee."
   },
   "hero": {
     "tag": "Creative Studio",
@@ -43,7 +42,7 @@
     ],
     "stats": [
       {
-        "count": "13",
+        "count": 18,
         "label": "Shipped Projects"
       },
       {
@@ -136,6 +135,11 @@
           "url": "https://github.com/skyestrela/keytune"
         },
         {
+          "type": "demo",
+          "label": "Live Preview \u2197",
+          "url": "https://skyestrela.github.io/keytune/"
+        },
+        {
           "type": "tag",
           "label": "PWA \u00b7 Free + Plus + Pro"
         }
@@ -197,8 +201,8 @@
         },
         {
           "type": "demo",
-          "label": "Live Demo \u2197",
-          "url": "http://localhost:3005"
+          "label": "Live Preview \u2197",
+          "url": "https://skyestrela.github.io/money-stack/"
         },
         {
           "type": "tag",
@@ -263,8 +267,8 @@
         },
         {
           "type": "demo",
-          "label": "Live Site \u2197",
-          "url": "https://leafylife-pro.vercel.app"
+          "label": "Live Preview \u2197",
+          "url": "https://www.greensage.co.uk"
         },
         {
           "type": "tag",
@@ -321,6 +325,16 @@
       ],
       "links": [
         {
+          "type": "github",
+          "label": "GitHub \u2197",
+          "url": "https://github.com/skyestrela/mission-control"
+        },
+        {
+          "type": "demo",
+          "label": "Live Preview \u2197",
+          "url": "https://mc.builderz.dev"
+        },
+        {
           "type": "tag",
           "label": "DevOps Tool \u00b7 Self-Hosted"
         }
@@ -365,6 +379,16 @@
       ],
       "links": [
         {
+          "type": "github",
+          "label": "GitHub \u2197",
+          "url": "https://github.com/skyestrela/brew-monitor"
+        },
+        {
+          "type": "demo",
+          "label": "Live Preview \u2197",
+          "url": "https://skyestrela.github.io/brew-monitor/"
+        },
+        {
           "type": "tag",
           "label": "Dashboard \u00b7 Standalone"
         }
@@ -408,6 +432,16 @@
         "Vanilla JS"
       ],
       "links": [
+        {
+          "type": "github",
+          "label": "GitHub \u2197",
+          "url": "https://github.com/skyestrela/neural-feed"
+        },
+        {
+          "type": "demo",
+          "label": "Live Preview \u2197",
+          "url": "https://skyestrela.github.io/neural-feed/"
+        },
         {
           "type": "tag",
           "label": "Briefing \u00b7 Daily Digest"
@@ -469,6 +503,11 @@
           "url": "https://github.com/skyestrela/carrylink"
         },
         {
+          "type": "demo",
+          "label": "Live Preview \u2197",
+          "url": "https://skyestrela.github.io/carrylink/"
+        },
+        {
           "type": "tag",
           "label": "SaaS \u00b7 Free + Pro"
         }
@@ -512,6 +551,16 @@
         "Responsive"
       ],
       "links": [
+        {
+          "type": "github",
+          "label": "GitHub \u2197",
+          "url": "https://github.com/skyestrela/ai-business-intel"
+        },
+        {
+          "type": "demo",
+          "label": "Live Preview \u2197",
+          "url": "https://skyestrela.github.io/ai-business-intel/"
+        },
         {
           "type": "tag",
           "label": "Landing Page \u00b7 B2B SaaS"
@@ -568,6 +617,16 @@
       ],
       "links": [
         {
+          "type": "github",
+          "label": "GitHub \u2197",
+          "url": "https://github.com/skyestrela/fasting-quest"
+        },
+        {
+          "type": "demo",
+          "label": "Live Preview \u2197",
+          "url": "https://skyestrela.github.io/fasting-quest/"
+        },
+        {
           "type": "tag",
           "label": "Health \u00b7 Fasting + AI"
         }
@@ -623,14 +682,14 @@
       ],
       "links": [
         {
-          "type": "demo",
-          "label": "Live Site \u2197",
-          "url": "https://www.greensage.co.uk"
+          "type": "github",
+          "label": "GitHub \u2197",
+          "url": "https://github.com/skyestrela/astrology-compass"
         },
         {
-          "type": "pwa",
-          "label": "\u2b07 Install App",
-          "url": "/install"
+          "type": "demo",
+          "label": "Live Preview \u2197",
+          "url": "https://skyestrela.github.io/astrology-compass/"
         },
         {
           "type": "tag",
@@ -687,9 +746,14 @@
       ],
       "links": [
         {
+          "type": "github",
+          "label": "GitHub \u2197",
+          "url": "https://github.com/skyestrela/storage-space"
+        },
+        {
           "type": "demo",
-          "label": "Live Demo \u2197",
-          "url": "http://localhost:3010"
+          "label": "Live Preview \u2197",
+          "url": "https://skyestrela.github.io/storage-space/"
         },
         {
           "type": "tag",
@@ -750,8 +814,14 @@
       "canvasType": "pulse",
       "links": [
         {
-          "text": "Live Demo \u2197",
-          "url": "http://localhost:3011"
+          "type": "github",
+          "label": "GitHub \u2197",
+          "url": "https://github.com/skyestrela/pulse"
+        },
+        {
+          "type": "demo",
+          "label": "Live Preview \u2197",
+          "url": "https://skyestrela.github.io/pulse/"
         }
       ]
     },
@@ -806,9 +876,14 @@
       ],
       "links": [
         {
-          "type": "live",
-          "label": "Live Demo \u2197",
-          "url": "http://localhost:3020"
+          "type": "github",
+          "label": "GitHub \u2197",
+          "url": "https://github.com/skyestrela/cortex"
+        },
+        {
+          "type": "demo",
+          "label": "Live Preview \u2197",
+          "url": "https://skyestrela.github.io/cortex/"
         },
         {
           "type": "tag",
@@ -817,6 +892,327 @@
       ],
       "canvasType": "cortex",
       "previewBg": "linear-gradient(135deg, #0d0b1a 0%, #1a0d2e 50%, #0d1a2e 100%)"
+    },
+    {
+      "id": "winnery",
+      "order": 14,
+      "tags": [
+        "E-Commerce",
+        "React",
+        "Canvas",
+        "Design"
+      ],
+      "name": "Tenuta Breva",
+      "role": "Premium Wine Boutique",
+      "description": "Editorial fine-wine ecommerce with a full purchase flow. Filterable cellar catalog across France, Italy, Germany & the US. CSS-drawn bottles with foil and label. Cart drawer, 4-step checkout, simulated backend with order IDs. Tweaks panel with 4 palettes.",
+      "features": [
+        {
+          "icon": "\ud83c\udf77",
+          "text": "CSS-Drawn Bottles"
+        },
+        {
+          "icon": "\ud83d\uded2",
+          "text": "Cart Drawer + Checkout"
+        },
+        {
+          "icon": "\ud83d\udd0d",
+          "text": "Filter & Sort Cellar"
+        },
+        {
+          "icon": "\ud83c\udfa8",
+          "text": "4 Palette Tweaks"
+        },
+        {
+          "icon": "\ud83d\udce6",
+          "text": "Simulated Order Flow"
+        },
+        {
+          "icon": "\ud83d\udcd6",
+          "text": "Editorial Design"
+        }
+      ],
+      "stack": [
+        "React 18",
+        "Babel Standalone",
+        "CSS3",
+        "Google Fonts",
+        "Vanilla JS"
+      ],
+      "links": [
+        {
+          "type": "github",
+          "label": "GitHub \u2197",
+          "url": "https://github.com/skyestrela/winnery"
+        },
+        {
+          "type": "demo",
+          "label": "Live Preview \u2197",
+          "url": "https://skyestrela.github.io/winnery/"
+        },
+        {
+          "type": "tag",
+          "label": "Design Prototype \u00b7 Ecommerce"
+        }
+      ],
+      "canvasType": "winnery",
+      "previewBg": "linear-gradient(135deg, #0b0806 0%, #1a0d08 50%, #200a0a 100%)"
+    },
+    {
+      "id": "newsvaley",
+      "order": 15,
+      "tags": [
+        "News",
+        "React",
+        "Dashboard",
+        "Cron"
+      ],
+      "name": "The Daily Bloom",
+      "role": "Positive News Platform + CMS",
+      "description": "Broadsheet-style positive-news site with a full editorial stack. Clickable article reader overlay, 5 curated palettes, multi-density layout. Pipelines page with 17 live cron jobs, ingest funnel (184 \u2192 12 stories), real-time log stream, and triage queue. Editor dashboard + reader account view.",
+      "features": [
+        {
+          "icon": "\ud83c\udf38",
+          "text": "Broadsheet Layout"
+        },
+        {
+          "icon": "\u2699\ufe0f",
+          "text": "17 Cron Job Pipelines"
+        },
+        {
+          "icon": "\ud83d\udcf0",
+          "text": "Article Reader Overlay"
+        },
+        {
+          "icon": "\ud83d\uddc2\ufe0f",
+          "text": "Editor Dashboard"
+        },
+        {
+          "icon": "\ud83d\udcca",
+          "text": "Ingest Funnel Diagram"
+        },
+        {
+          "icon": "\ud83d\udc64",
+          "text": "Reader Account View"
+        }
+      ],
+      "stack": [
+        "React 18",
+        "Babel Standalone",
+        "Newsreader",
+        "DM Mono",
+        "Spectral"
+      ],
+      "links": [
+        {
+          "type": "github",
+          "label": "GitHub \u2197",
+          "url": "https://github.com/skyestrela/newsvaley"
+        },
+        {
+          "type": "demo",
+          "label": "Live Preview \u2197",
+          "url": "https://skyestrela.github.io/newsvaley/pipelines.html"
+        },
+        {
+          "type": "tag",
+          "label": "Design Prototype \u00b7 News + CMS"
+        }
+      ],
+      "canvasType": "newsvaley",
+      "previewBg": "linear-gradient(135deg, #110e08 0%, #1a1610 50%, #1e1c14 100%)"
+    },
+    {
+      "id": "friendlygame",
+      "order": 16,
+      "tags": [
+        "Fintech",
+        "Game",
+        "React",
+        "Real-Money"
+      ],
+      "name": "Drift",
+      "role": "60-Second Prediction Game",
+      "description": "Novel real-money game mechanic: anchor a price level on a provably-fair drifting line. Closest anchor to the final value wins a share of the pari-mutuel pool. 3% house rake. Commit-reveal fairness, fiat + USDC. Full mobile (iOS frame) and desktop (browser window) prototype with Login, Lobby, Wallet, Leaderboard, and Profile.",
+      "features": [
+        {
+          "icon": "\ud83d\udcc8",
+          "text": "Live Drift Line"
+        },
+        {
+          "icon": "\u2693",
+          "text": "Anchor Mechanic"
+        },
+        {
+          "icon": "\ud83c\udfc6",
+          "text": "Pari-Mutuel Pool"
+        },
+        {
+          "icon": "\ud83d\udd10",
+          "text": "Commit-Reveal Fairness"
+        },
+        {
+          "icon": "\ud83d\udcf1",
+          "text": "Mobile + Desktop"
+        },
+        {
+          "icon": "\ud83d\udcb0",
+          "text": "Fiat + USDC"
+        }
+      ],
+      "stack": [
+        "React 18",
+        "Babel Standalone",
+        "Geist",
+        "Geist Mono",
+        "Canvas 2D"
+      ],
+      "links": [
+        {
+          "type": "github",
+          "label": "GitHub \u2197",
+          "url": "https://github.com/skyestrela/drift-game"
+        },
+        {
+          "type": "demo",
+          "label": "Live Preview \u2197",
+          "url": "https://skyestrela.github.io/drift-game/"
+        },
+        {
+          "type": "tag",
+          "label": "Design Prototype \u00b7 Fintech Game"
+        }
+      ],
+      "canvasType": "friendlygame",
+      "previewBg": "linear-gradient(135deg, #0f0e0c 0%, #1a1916 50%, #1e1c18 100%)"
+    },
+    {
+      "id": "groundherbs",
+      "order": 17,
+      "tags": [
+        "E-Commerce",
+        "React",
+        "Multi-Currency",
+        "Mobile"
+      ],
+      "name": "GROUND",
+      "role": "Plant Powder Apothecary",
+      "description": "Full botanical powder store with 40 products across adaptogens, mushrooms, greens & Ayurvedic classics. 8 screens: Home, Shop (filters/search), PDP, Cart, 3-step Checkout, Find-Your-Powder quiz, Recipes, About. USD/GBP/EUR/INR/JPY live currency switcher. Customer account dashboard, admin mill-room, fully mobile-responsive.",
+      "features": [
+        {
+          "icon": "\ud83c\udf3f",
+          "text": "40 Botanical Products"
+        },
+        {
+          "icon": "\ud83d\udcb1",
+          "text": "5-Currency Switcher"
+        },
+        {
+          "icon": "\ud83d\udecd\ufe0f",
+          "text": "Full Cart & Checkout"
+        },
+        {
+          "icon": "\ud83e\uddea",
+          "text": "Product Quiz"
+        },
+        {
+          "icon": "\ud83d\udcca",
+          "text": "Admin Dashboard"
+        },
+        {
+          "icon": "\ud83d\udcf1",
+          "text": "Mobile Responsive"
+        }
+      ],
+      "stack": [
+        "React 18",
+        "Babel Standalone",
+        "Newsreader",
+        "DM Sans",
+        "JetBrains Mono"
+      ],
+      "links": [
+        {
+          "type": "github",
+          "label": "GitHub \u2197",
+          "url": "https://github.com/skyestrela/ground-herbs"
+        },
+        {
+          "type": "demo",
+          "label": "Live Preview \u2197",
+          "url": "https://skyestrela.github.io/ground-herbs/"
+        },
+        {
+          "type": "tag",
+          "label": "Design Prototype \u00b7 Ecommerce"
+        }
+      ],
+      "canvasType": "groundherbs",
+      "previewBg": "linear-gradient(135deg, #2a1f10 0%, #3d2b14 50%, #4a3318 100%)"
+    },
+    {
+      "id": "hivelink",
+      "order": 18,
+      "tags": [
+        "Next.js",
+        "Gamification",
+        "FinTech",
+        "Platform"
+      ],
+      "name": "HiveLink",
+      "role": "Gamified Bee Ecosystem Platform",
+      "description": "Full-stack gamified platform connecting honey lovers with local beekeepers. Proof of Care mining earns NTK tokens for real hive care actions. Hive Investment Pool lets non-beekeepers stake Hive Shares in active apiaries and earn passive APY returns. Dual-currency economy, 9-course academy, honey marketplace, community feed, XP level system, and interactive apiary map.",
+      "features": [
+        {
+          "icon": "\u26d3",
+          "text": "Proof of Care Mining"
+        },
+        {
+          "icon": "\ud83d\udcb0",
+          "text": "Hive Investment Pool"
+        },
+        {
+          "icon": "\ud83c\udf3f",
+          "text": "Dual Currency (NTK + HS)"
+        },
+        {
+          "icon": "\ud83c\udf93",
+          "text": "9-Course Academy"
+        },
+        {
+          "icon": "\ud83d\uded2",
+          "text": "Honey Marketplace"
+        },
+        {
+          "icon": "\ud83d\udc1d",
+          "text": "XP & Level System"
+        }
+      ],
+      "stack": [
+        "Next.js 16",
+        "React 19",
+        "TypeScript",
+        "Tailwind v4",
+        "Turbopack",
+        "Framer Motion"
+      ],
+      "links": [
+        {
+          "type": "github",
+          "label": "GitHub \u2197",
+          "url": "https://github.com/skyestrela/hivelink"
+        },
+        {
+          "type": "demo",
+          "label": "Live Preview \u2197",
+          "url": "https://skyestrela.github.io/hivelink/"
+        },
+        {
+          "type": "tag",
+          "label": "Platform \u00b7 Free + Pro"
+        }
+      ],
+      "canvasType": "hivelink",
+      "previewBg": "linear-gradient(135deg, #451a03 0%, #78350f 50%, #b45309 100%)"
     }
   ]
 }
