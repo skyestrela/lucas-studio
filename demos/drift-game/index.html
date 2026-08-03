@@ -1,0 +1,181 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Drift — minute-by-minute money game</title>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500;600;700&display=swap" rel="stylesheet" />
+<style>
+  html, body, #root { height: 100%; margin: 0; }
+  body { font-family: "Geist", ui-sans-serif, system-ui, sans-serif; background: #f0eee9; -webkit-font-smoothing: antialiased; }
+  * { box-sizing: border-box; }
+</style>
+
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+</head>
+<body>
+<div id="root"></div>
+
+<script type="text/babel" src="design-canvas.jsx"></script>
+<script type="text/babel" src="ios-frame.jsx"></script>
+<script type="text/babel" src="browser-window.jsx"></script>
+<script type="text/babel" src="tweaks-panel.jsx"></script>
+<script type="text/babel" src="tokens.jsx"></script>
+<script type="text/babel" src="engine.jsx"></script>
+<script type="text/babel" src="screens.jsx"></script>
+<script type="text/babel" src="app.jsx"></script>
+
+<script type="text/babel">
+const TWEAK_DEFAULTS = /*EDITMODE-BEGIN*/{
+  "palette": "paper",
+  "density": "standard",
+  "presets": "balanced"
+}/*EDITMODE-END*/;
+
+const PRESET_OPTIONS = {
+  micro:    [1, 5, 10],
+  balanced: [5, 25, 100],
+  whales:   [25, 100, 500],
+};
+
+function Root() {
+  const [t, setTweak] = useTweaks(TWEAK_DEFAULTS);
+  const c = usePalette(t.palette);
+  const presets = PRESET_OPTIONS[t.presets] || PRESET_OPTIONS.balanced;
+
+  // Inject CSS vars for body so the canvas grid bg works on dark palettes too
+  React.useEffect(() => {
+    document.body.style.background = c.bg;
+  }, [c.bg]);
+
+  return (
+    <DriftProvider>
+      <DesignCanvas>
+
+        <DCSection id="hero" title="Drift" subtitle="60-second prediction game · prototype on mobile and desktop">
+
+          <DCArtboard id="mobile-live" label="Mobile · Live game" width={402} height={874}>
+            <IOSDevice width={402} height={874} dark={t.palette === 'graphite'}>
+              <MobileApp c={c} density={t.density} presets={presets} startScreen="game" />
+            </IOSDevice>
+          </DCArtboard>
+
+          <DCArtboard id="desktop-live" label="Desktop · Live game" width={1100} height={750}>
+            <ChromeWindow url="drift.fm/play" tabs={[{ title: 'Drift — The Line' }]} width={1100} height={750}>
+              <DesktopApp c={c} density={t.density} presets={presets} startScreen="game" />
+            </ChromeWindow>
+          </DCArtboard>
+
+        </DCSection>
+
+        <DCSection id="mobile-screens" title="Mobile screens" subtitle="Each artboard is the same app, started on a different tab — try navigating around">
+
+          <DCArtboard id="m-login" label="Login" width={402} height={874}>
+            <IOSDevice width={402} height={874} dark={t.palette === 'graphite'}>
+              <ForceLoginMobile c={c} density={t.density} presets={presets} />
+            </IOSDevice>
+          </DCArtboard>
+
+          <DCArtboard id="m-lobby" label="Lobby" width={402} height={874}>
+            <IOSDevice width={402} height={874} dark={t.palette === 'graphite'}>
+              <MobileApp c={c} density={t.density} presets={presets} startScreen="lobby" />
+            </IOSDevice>
+          </DCArtboard>
+
+          <DCArtboard id="m-wallet" label="Wallet" width={402} height={874}>
+            <IOSDevice width={402} height={874} dark={t.palette === 'graphite'}>
+              <MobileApp c={c} density={t.density} presets={presets} startScreen="wallet" />
+            </IOSDevice>
+          </DCArtboard>
+
+          <DCArtboard id="m-leaders" label="Leaderboard" width={402} height={874}>
+            <IOSDevice width={402} height={874} dark={t.palette === 'graphite'}>
+              <MobileApp c={c} density={t.density} presets={presets} startScreen="leaders" />
+            </IOSDevice>
+          </DCArtboard>
+
+          <DCArtboard id="m-profile" label="Profile" width={402} height={874}>
+            <IOSDevice width={402} height={874} dark={t.palette === 'graphite'}>
+              <MobileApp c={c} density={t.density} presets={presets} startScreen="profile" />
+            </IOSDevice>
+          </DCArtboard>
+
+        </DCSection>
+
+        <DCPostIt top={10} left={60} rotate={-1.5}>
+          <strong>Drift</strong> — 60s rounds. Anchor a level on the drifting line. Closest to where it lands wins the pari-mutuel pool, minus 3% rake. Provably fair via commit-reveal seed.
+        </DCPostIt>
+
+      </DesignCanvas>
+
+      <TweaksPanel title="Drift · Tweaks">
+        <TweakSection label="Palette">
+          <TweakColor label="Theme" value={t.palette}
+            options={[
+              ['#f8f4ee', '#1a1612', '#2d8a52'],
+              ['#1e1c1a', '#fafaf9', '#5dcb86'],
+              ['#f5f7f1', '#1d2a1f', '#3a8f5a'],
+            ]}
+            onChange={(v) => {
+              const map = { '["#f8f4ee","#1a1612","#2d8a52"]': 'paper',
+                            '["#1e1c1a","#fafaf9","#5dcb86"]': 'graphite',
+                            '["#f5f7f1","#1d2a1f","#3a8f5a"]': 'sage' };
+              setTweak('palette', map[JSON.stringify(v)] || 'paper');
+            }} />
+          <TweakRadio label="Mode" value={t.palette}
+            options={[
+              { value: 'paper', label: 'Light' },
+              { value: 'graphite', label: 'Dark' },
+              { value: 'sage', label: 'Sage' },
+            ]}
+            onChange={(v) => setTweak('palette', v)} />
+        </TweakSection>
+
+        <TweakSection label="HUD">
+          <TweakRadio label="Density" value={t.density}
+            options={[
+              { value: 'minimal', label: 'Minimal' },
+              { value: 'standard', label: 'Standard' },
+            ]}
+            onChange={(v) => setTweak('density', v)} />
+        </TweakSection>
+
+        <TweakSection label="Stake presets">
+          <TweakRadio label="Bands" value={t.presets}
+            options={[
+              { value: 'micro', label: '$1–10' },
+              { value: 'balanced', label: '$5–100' },
+              { value: 'whales', label: '$25–500' },
+            ]}
+            onChange={(v) => setTweak('presets', v)} />
+        </TweakSection>
+
+        <TweakButton label="Reset wallet & history" secondary
+          onClick={() => { localStorage.removeItem('drift:wallet'); localStorage.removeItem('drift:history'); location.reload(); }} />
+      </TweaksPanel>
+    </DriftProvider>
+  );
+}
+
+// Tiny helper: render the mobile app but force the login screen as a starting
+// view, so we have a stable Login artboard for review.
+function ForceLoginMobile({ c, density, presets }) {
+  const [done, setDone] = React.useState(false);
+  return (
+    <div style={{ width: '100%', height: '100%', background: c.surface, display: 'flex', flexDirection: 'column' }}>
+      <div style={{ height: 54, flexShrink: 0 }} />
+      {!done
+        ? <div style={{ flex: 1, overflow: 'auto' }}><LoginScreen c={c} onContinue={() => setDone(true)} /></div>
+        : <MobileApp c={c} density={density} presets={presets} startScreen="game" />}
+    </div>
+  );
+}
+
+ReactDOM.createRoot(document.getElementById('root')).render(<Root />);
+</script>
+</body>
+</html>

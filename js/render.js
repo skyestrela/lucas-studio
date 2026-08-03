@@ -175,6 +175,9 @@ function renderProject(p, index) {
   const stackHtml = (p.stack || []).map(s => `<span>${escHtml(s)}</span>`).join('');
 
   const linksHtml = (p.links || []).map(l => {
+    if (l.type === 'github') {
+      return `<span class="project-link-tag">Source · Private</span>`;
+    }
     if (l.type === 'tag') {
       return `<span class="project-link-tag">${escHtml(l.label)}</span>`;
     }

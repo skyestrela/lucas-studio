@@ -1,0 +1,1 @@
+if('serviceWorker' in navigator) {window.addEventListener('load', () => {navigator.serviceWorker.register('/lucas-studio/demos/keytune/sw.js', { scope: '/lucas-studio/demos/keytune/' })})}
