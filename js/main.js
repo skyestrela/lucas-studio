@@ -1241,7 +1241,7 @@ function drawCarrylink(time) {
   // Contact details (small mono)
   ctx.font = '400 9px "JetBrains Mono"';
   ctx.fillStyle = ink30;
-  ctx.fillText('lucas@lucasstudio.dev', cardX + 24, cardY + 82);
+  ctx.fillText('good-theme-vision@duck.com', cardX + 24, cardY + 82);
   ctx.fillText('skyestrela.io', cardX + 24, cardY + 96);
 
   // Affiliate short link (accent color)

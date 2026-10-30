@@ -68,14 +68,9 @@
     "subtitle": "Got an idea? Let's make it real.",
     "links": [
       {
-        "icon": "\u2318",
-        "label": "Email",
-        "url": "mailto:luc.cloud8@gmail.com"
-      },
-      {
         "icon": "\u2709",
         "label": "Email",
-        "url": "mailto:lucas@lucasstudio.dev"
+        "url": "mailto:good-theme-vision@duck.com"
       }
     ]
   },
